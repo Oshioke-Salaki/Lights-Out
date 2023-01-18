@@ -5,3 +5,10 @@
     justify-content: center;
     height: 100vh;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .App {
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+}
