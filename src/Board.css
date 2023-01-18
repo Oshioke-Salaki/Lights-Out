@@ -53,6 +53,28 @@ table tr:last-child td:last-child {
     -o-animation: neon-blue 2s linear infinite;
 }
 
+
+/* .copy {
+    font-family: neon;
+    color: #426dfb;
+    font-size: 20px;
+    text-shadow: 0 0 3vw #2356ff;
+    animation: neon-blue 2s linear infinite;
+    -moz-animation: neon-blue 2s linear infinite;
+    -webkit-animation: neon-blue 2s linear infinite;
+    -o-animation: neon-blue 2s linear infinite;
+}
+
+.copy span {
+    font-family: neon;
+    color: #fb4264;
+    font-size: 20px;
+    text-shadow: 0 0 3vw #f40a35;
+    animation: neon-orange 1s ease infinite;
+    -moz-animation: neon-orange 1s ease infinite;
+    -webkit-animation: neon-orange 1s ease infinite;
+} */
+
 .winner .neon-blue,
 .winner .neon-orange {
     font-size: 200px;

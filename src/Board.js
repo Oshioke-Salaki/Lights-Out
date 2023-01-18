@@ -127,6 +127,7 @@ class Board extends Component {
             {this.makeTable()}
           </div>
         )}
+        <h3>Oshioke Salaki &copy;2023</h3>
       </div>
     );
   }
