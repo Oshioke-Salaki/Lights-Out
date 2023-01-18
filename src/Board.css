@@ -32,10 +32,16 @@ table tr:last-child td:last-child {
     justify-content: center;
 }
 
+@media only screen and (max-device-width: 480px) {
+    .Board-title {
+        flex-direction: column;
+    }
+}
+
 .neon-orange {
     font-family: neon;
     color: #fb4264;
-    font-size: 8vh;
+    font-size: 80px;
     text-shadow: 0 0 3vw #f40a35;
     animation: neon-orange 1s ease infinite;
     -moz-animation: neon-orange 1s ease infinite;
@@ -45,7 +51,7 @@ table tr:last-child td:last-child {
 .neon-blue {
     font-family: neon;
     color: #426dfb;
-    font-size: 8vh;
+    font-size: 80px;
     text-shadow: 0 0 3vw #2356ff;
     animation: neon-blue 2s linear infinite;
     -moz-animation: neon-blue 2s linear infinite;
@@ -55,7 +61,7 @@ table tr:last-child td:last-child {
 
 .winner .neon-blue,
 .winner .neon-orange {
-    font-size: 14vh;
+    font-size: 200px;
 }
 
 @keyframes neon-orange {
