@@ -92,4 +92,8 @@ table tr:last-child td:last-child {
     .neon-blue {
         font-size: 60px;
     }
+    .winner .neon-blue,
+    .winner .neon-orange {
+        font-size: 140px;
+    }
 }
