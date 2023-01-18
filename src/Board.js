@@ -39,7 +39,7 @@ class Board extends Component {
 
     // TODO: set initial state
     this.state = {
-      hasWon: false,
+      hasWon: true,
       board: this.createBoard(),
     };
   }
