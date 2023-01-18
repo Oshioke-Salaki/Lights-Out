@@ -12,7 +12,7 @@
 
 @media only screen and (max-device-width: 480px) {
     .Cell {
-        height: 65px;
-        width: 65px;
+        height: 60px;
+        width: 60px;
     }
 }
