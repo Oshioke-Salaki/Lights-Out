@@ -73,60 +73,60 @@ class Board extends Component {
         board[y][x] = !board[y][x];
       }
     }
-
-    //Flip initial cell
-    flipCell(y, x); //Flip initial cell
-    flipCell(y, x - 1); //Flip left
-    flipCell(y, x + 1); //Flip right
-    flipCell(y - 1, x); //Flip below
-    flipCell(y + 1, x); //Flip above
-
     // TODO: flip this cell and the cells around it
+    flipCell(y, x); //Flip initial cell
+    flipCell(y, x - 1); //flip left
+    flipCell(y, x + 1); //flip right
+    flipCell(y - 1, x); //flip below
+    flipCell(y + 1, x); //flip above
 
     // win when every cell is turned off
-    let hasWon = board.flatMap((val) => val).every((val) => val === false);
     // TODO: determine is the game has been won
+    let hasWon = board.every((row) => row.every((cell) => !cell));
 
-    this.setState({ board, hasWon });
+    this.setState({ board: board, hasWon: hasWon });
   }
 
   /** Render game board or winning message. */
-
-  render() {
-    // if the game is won, just show a winning msg & render nothing else
-    if (this.state.hasWon) {
-      return <h1>You won!!!</h1>;
-    }
-
-    // TODO
-
-    // make table board
-    let tblBody = [];
+  makeTable() {
+    let tblBoard = [];
     for (let y = 0; y < this.props.nrows; y++) {
       let row = [];
       for (let x = 0; x < this.props.ncols; x++) {
+        let coord = `${y}-${x}`;
         row.push(
           <Cell
-            key={`${y}-${x}`}
+            key={coord}
             isLit={this.state.board[y][x]}
-            flipCellsAroundMe={() => this.flipCellsAround(`${y}-${x}`)}
+            flipCellsAroundMe={() => this.flipCellsAround(coord)}
           />
         );
       }
-
-      tblBody.push(<tr key={y}>{row}</tr>);
+      tblBoard.push(<tr key={y}>{row}</tr>);
     }
-
-    // TODO
+    return (
+      <table className="Board">
+        <tbody>{tblBoard}</tbody>
+      </table>
+    );
+  }
+  render() {
     return (
       <div>
-        <div className="Board-title">
-          <div className="neon-orange">Lights</div>
-          <div className="neon-blue">Out</div>
-        </div>
-        <table className="Board">
-          <tbody>{tblBody}</tbody>
-        </table>
+        {this.state.hasWon ? (
+          <div className="winner">
+            <span className="neon-orange">YOU</span>
+            <span className="neon-blue">WIN!</span>
+          </div>
+        ) : (
+          <div>
+            <div className="Board-title">
+              <div className="neon-orange">Lights</div>
+              <div className="neon-blue">Out</div>
+            </div>
+            {this.makeTable()}
+          </div>
+        )}
       </div>
     );
   }
